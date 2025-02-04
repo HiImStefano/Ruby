@@ -1,6 +1,45 @@
 playerVictories = 0
 computerVictories = 0 
 
+def PickedRock(playerChoice, computerChoice)
+  if computerChoice == "Rock"
+    print "Game is a tie"
+    return 
+  elsif computerChoice == "Paper"
+    print "The Player Loses"
+    return false
+  else
+    print "The Player Wins"
+    return true
+  end
+end  
+
+def PickedScissors(playerChoice, computerChoice)
+  if computerChoice == "Scissors"
+    print "Game is a tie"
+    return 
+  elsif computerChoice == "Rock"
+    print "The Player Loses"
+    return false
+  else
+    print "The Player Wins"
+    return true
+  end
+end  
+
+def PickedPaper(playerChoice, computerChoice)
+  if computerChoice == "Paper"
+    print "Game is a tie"
+    return 
+  elsif computerChoice == "Scissors"
+    print "The Player Loses"
+    return false
+  else
+    print "The Player Wins"
+    return true
+  end
+end  
+
 
 while playerVictories != 3 || computerVictories != 3
   playerNum = 9
@@ -10,20 +49,35 @@ while playerVictories != 3 || computerVictories != 3
   puts "3. Scissors"
   print "What will you play: "
 
+  computerNum = rand(3)
+  if computerNum == 0
+    computerChoice = "Rock"
+  elsif computerNum == 1
+    computerChoice = "Paper"
+  elsif computerNum == 2
+    computerChoice = "Scissors"
+  end
+
   while playerNum > 2
     playerNum = gets.to_i
     modPlayerNum = playerNum - 1
-    if playerNum == 0
+    if modPlayerNum == 0
       puts "You picked Rock!"
+      puts "The Computer picked #{computerChoice}"
       playerChoice = "Rock"
+      playerWin = PickedRock(playerChoice,computerChoice)
       break
-    elsif playerNum == 1
+    elsif modPlayerNum == 1
       puts "You picked Paper"
+      puts "The Computer picked #{computerChoice}"
       playerChoice = "Paper"
+      playerWin = PickedPaper(playerChoice, computerChoice)
       break
-    elsif playerNum == 2
+    elsif modPlayerNum == 2
       puts "You picked Scissors"
+      puts "The Computer picked #{computerChoice}"
       playerChoice = "Scissors"
+      playerWin = PickedScissors(playerChoice,computerChoice)
       break
     else
       puts "Invalid Result"
@@ -31,16 +85,11 @@ while playerVictories != 3 || computerVictories != 3
     end
   end
 
-  computerNum = rand(3)
-  if computerNum == 0
-    puts "The Computer picked Rock!"
-    computerChoice = "Rock"
-  elsif computerNum == 1
-    puts "The Computer picked Paper"
-    computerChoice = "Paper"
-  elsif computerNum == 2
-    puts "The Computer picked Scissors"
-    computerChoice = "Scissors"
+  if playerWin == true
+    playerVictories = playerVictories + 1
+  elsif playerWin == false
+    computerVictories = computerVictories + 1
   end
+
 
 end
