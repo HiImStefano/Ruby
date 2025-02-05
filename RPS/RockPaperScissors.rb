@@ -41,7 +41,7 @@ def PickedPaper(playerChoice, computerChoice)
 end  
 
 
-while playerVictories > 2 || computerVictories > 2
+while playerVictories <= 2 
   playerNum = 9
   puts "\nPlease Enter your Decision!"
   puts "1. Rock"
@@ -94,5 +94,9 @@ while playerVictories > 2 || computerVictories > 2
   puts "\nCurrent Score!"
   puts "Player Score: #{playerVictories}!"
   puts "Computer Score: #{computerVictories}!"
+  if computerVictories == 3
+    puts "The Computer Wins Try Again Next Time"
+    break
+  end
 
 end
