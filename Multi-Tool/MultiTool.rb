@@ -3,7 +3,7 @@ def tool_input(choice)
     case choice
     when 'Flower'
       load 'FlowerShop.rb'
-      flower
+      flowerShop
     else
       puts 'Not a choice'
     end

@@ -1,3 +1,10 @@
+module FlowerPrices
+  ROSEPRICE = 1.25
+  SUNFLOWERPRICE = 1.00
+  LAVENDERPRICE = 2.40
+  BABYSBREATHEPRICE = 0.75
+end
+
 class Order
   def initialize(name)
     @name = name
@@ -6,7 +13,10 @@ class Order
 
 end
 
-def FlowerShop
+def flowerShop
+  customerchoice = 0
+  while customerchoice != '3'
+  customerchoice = 0
   puts "Welcome to the Flower Shop"
   puts "1. Create Order"
   puts "2. View Flower Prices"
@@ -14,11 +24,16 @@ def FlowerShop
   print "What would you like to do: "
   customerchoice = gets.chomp
 
-  while customerchoice != 3
-    if customerchoice == 1
+    if customerchoice == '1'
       print "Can I get a name for the order: "
       customername = gets.chomp
       customerOrder = Order.new(customername)
+    elsif customerchoice == '2'
+      puts "Price per flower: "
+      puts "Rose: #{FlowerPrices::ROSEPRICE}"
+      puts "Sunflower: #{FlowerPrices::SUNFLOWERPRICE}"
+      puts "Lavender: #{FlowerPrices::LAVENDERPRICE}"
+      puts "Babys-Breathe: #{FlowerPrices::BABYSBREATHEPRICE}"
     end
   end
 end
