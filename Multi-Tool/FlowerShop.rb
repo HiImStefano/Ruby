@@ -28,6 +28,12 @@ def flowerShop
       print "Can I get a name for the order: "
       customername = gets.chomp
       customerOrder = Order.new(customername)
+      customerOrderChoice = '0'
+        puts "1. Add Flower"
+        puts "2. View Order Price"
+        puts 
+        print "What would like to do with your order: "
+      
     elsif customerchoice == '2'
       puts "Price per flower: "
       puts "Rose: #{FlowerPrices::ROSEPRICE}"
@@ -36,4 +42,5 @@ def flowerShop
       puts "Babys-Breathe: #{FlowerPrices::BABYSBREATHEPRICE}"
     end
   end
+  return
 end

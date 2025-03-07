@@ -9,10 +9,10 @@ def tool_input(choice)
     end
 end
 
-
-puts "Welcome to the Multi-Tool! What would you like to do: "
-tool_choice = gets.chomp()
+puts "Welcome to the Multi-Tool!"
+tool_choice = 0
 while tool_choice != 'Exit'
+  puts "Multi-Tool Hub! Please Make your choice: "
   tool_input(tool_choice)
   tool_choice = gets.chomp()
 end
